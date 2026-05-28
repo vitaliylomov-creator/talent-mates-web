@@ -21,10 +21,15 @@ export type BottomLink = {
   external?: boolean
 }
 
-// MATE AI live app — entry from the marketing site.
-// Use mate-redirect.html instead if you want the 3-second loading screen.
-export const MATE_AI_URL =
-  'https://vitaliylomov-creator.github.io/talent-mates-pddr/mate-auth.html'
+// Live apps hosted on GitHub Pages (talent-mates-pddr).
+// When the app.talent-mates.com subdomain is live, replace the host below
+// in one place and every menu link updates automatically.
+const APP_HOST = 'https://vitaliylomov-creator.github.io/talent-mates-pddr'
+
+// MATE AI — use mate-redirect.html instead if you want the 3-second loading screen.
+export const MATE_AI_URL  = `${APP_HOST}/mate-auth.html`
+export const CREATORS_URL = `${APP_HOST}/creators-auth.html`
+export const PDDR_URL     = `${APP_HOST}/player_report_sign.html`
 
 export const NAV_SECTIONS: NavSection[] = [
   {
@@ -33,9 +38,9 @@ export const NAV_SECTIONS: NavSection[] = [
     items: [
       { label: 'Sports Talent',            href: '/sports-talent' },
       { label: 'Entertainment Talent',     href: '/entertainment-talent' },
-      { label: 'Talent Mates Creators',    href: '/talent-mates-creators' },
-      { label: 'MATE — AI Football Agent', href: MATE_AI_URL, external: true, badge: { text: 'AI', pulse: true } },
-      { label: 'Player Diagnostic Report', href: '/pddr' },
+      { label: 'Talent Mates Creators',    href: CREATORS_URL, external: true },
+      { label: 'MATE — AI Football Agent', href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
+      { label: 'Player Diagnostic Report', href: PDDR_URL,     external: true },
     ],
   },
   {
