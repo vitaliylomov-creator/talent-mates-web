@@ -21,10 +21,10 @@ export type BottomLink = {
   external?: boolean
 }
 
-// Live apps hosted on GitHub Pages (talent-mates-pddr).
-// When the app.talent-mates.com subdomain is live, replace the host below
-// in one place and every menu link updates automatically.
-const APP_HOST = 'https://vitaliylomov-creator.github.io/talent-mates-pddr'
+// Live apps — served by GitHub Pages (talent-mates-pddr repo) behind the
+// app.talent-mates.com subdomain. Switching back to the github.io host is
+// a one-line change here if ever needed.
+const APP_HOST = 'https://app.talent-mates.com'
 
 // MATE AI — use mate-redirect.html instead if you want the 3-second loading screen.
 export const MATE_AI_URL  = `${APP_HOST}/mate-auth.html`
