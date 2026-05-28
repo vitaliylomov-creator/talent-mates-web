@@ -5,7 +5,7 @@ const nextConfig = {
 
   // Vercel handles image optimisation automatically
   images: {
-    domains: [],
+    remotePatterns: [],
   },
 }
 

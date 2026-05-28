@@ -6,10 +6,6 @@ import { NAV_SECTIONS, BOTTOM_LINKS } from '@/lib/navigation'
 import SubPanel from './SubPanel'
 import styles from './HomeNav.module.css'
 
-type Props = {
-  visible: boolean
-}
-
 const CHEVRON = (
   <svg className={styles.chevron} viewBox="0 0 20 20" fill="none" aria-hidden>
     <path d="M7 5l5 5-5 5" stroke="currentColor" strokeWidth="1.3"
@@ -17,7 +13,7 @@ const CHEVRON = (
   </svg>
 )
 
-export default function HomeNav({ visible }: Props) {
+export default function HomeNav() {
   const [activeId, setActiveId] = useState<string | null>(null)
   const navRef    = useRef<HTMLUListElement>(null)
   const panelsRef = useRef<HTMLDivElement>(null)
@@ -101,7 +97,7 @@ export default function HomeNav({ visible }: Props) {
           {NAV_SECTIONS.map((section, i) => (
             <li
               key={section.id}
-              className={`${styles.item} ${visible ? styles.itemIn : ''}`}
+              className={styles.item}
               style={{ animationDelay: `${0.06 + i * 0.10}s` }}
             >
               <button
@@ -133,7 +129,7 @@ export default function HomeNav({ visible }: Props) {
 
       {/* BOTTOM UTILITY LINKS */}
       <nav
-        className={`${styles.bottomNav} ${visible ? styles.bottomIn : ''}`}
+        className={styles.bottomNav}
         aria-label="Site links"
       >
         {BOTTOM_LINKS.map(link => (

@@ -4,10 +4,6 @@ import Link from 'next/link'
 import { SOCIAL_LINKS } from '@/lib/navigation'
 import styles from './Topbar.module.css'
 
-type Props = {
-  visible: boolean
-}
-
 // Inline SVG icons — no external icon library needed
 const ICONS: Record<string, JSX.Element> = {
   linkedin: (
@@ -27,9 +23,9 @@ const ICONS: Record<string, JSX.Element> = {
   ),
 }
 
-export default function Topbar({ visible }: Props) {
+export default function Topbar() {
   return (
-    <header className={`${styles.topbar} ${visible ? styles.in : ''}`}>
+    <header className={styles.topbar}>
       <Link href="/" className={styles.brand} aria-label="Talent Mates home">
         <strong>Talent</strong> <span>Mates</span>
       </Link>
