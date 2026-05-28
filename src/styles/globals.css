@@ -1,0 +1,78 @@
+/* ─── GOOGLE FONTS ──────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* ─── RESET ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── DESIGN TOKENS ─────────────────────────────────── */
+:root {
+  --purple:        #794DC6;
+  --purple-dk:     #6b42b5;
+  --purple-lt:     #7a50cc;
+  --white:         #ffffff;
+  --ink:           #1a0f2e;
+  --border:        rgba(255,255,255,0.10);
+  --border-mid:    rgba(255,255,255,0.20);
+  --border-strong: rgba(255,255,255,0.35);
+  --t1: #ffffff;
+  --t2: rgba(255,255,255,0.82);
+  --t3: rgba(255,255,255,0.55);
+  --t4: rgba(255,255,255,0.35);
+  --font-d: 'DM Serif Display', Georgia, serif;
+  --font-b: 'DM Sans', system-ui, sans-serif;
+  --ease:       cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-sharp: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--purple);
+  color: var(--white);
+  font-family: var(--font-b);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; }
+ul, ol { list-style: none; }
+
+/* ─── GLOBAL ANIMATIONS ─────────────────────────────── */
+@keyframes splashIn {
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes splashExit {
+  to { opacity: 0; transform: scale(1.12); }
+}
+@keyframes spinRing {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.35; transform: scale(0.7); }
+}
+@keyframes fadeDown {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes subItemIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── BG NOISE TEXTURE ──────────────────────────────── */
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
