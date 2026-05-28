@@ -39,30 +39,6 @@ a { color: inherit; text-decoration: none; }
 button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; }
 ul, ol { list-style: none; }
 
-/* ─── GLOBAL ANIMATIONS ─────────────────────────────── */
-@keyframes splashIn {
-  to { opacity: 1; transform: scale(1); }
-}
-@keyframes splashExit {
-  to { opacity: 0; transform: scale(1.12); }
-}
-@keyframes spinRing {
-  to { transform: rotate(360deg); }
-}
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.35; transform: scale(0.7); }
-}
-@keyframes fadeDown {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes subItemIn {
-  to { opacity: 1; transform: translateX(0); }
-}
-
 /* ─── BG NOISE TEXTURE ──────────────────────────────── */
 .bg-noise {
   position: fixed;
