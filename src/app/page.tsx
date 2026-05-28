@@ -1,21 +1,22 @@
 'use client'
 
-import { useState, useCallback } from 'react'
-import dynamic from 'next/dynamic'
+import { useState, useEffect } from 'react'
 import Topbar  from '@/components/ui/Topbar'
 import HomeNav from '@/components/ui/HomeNav'
 
-const Splash = dynamic(() => import('@/components/ui/Splash'), { ssr: false })
-
 export default function HomePage() {
-  const [splashDone, setSplashDone] = useState(false)
-  const handleSplashComplete = useCallback(() => setSplashDone(true), [])
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), 100)
+    return () => clearTimeout(t)
+  }, [])
+
   return (
     <>
       <div className="bg-noise" aria-hidden />
-      {!splashDone && <Splash onComplete={handleSplashComplete} />}
-      <Topbar visible={splashDone} />
-      <HomeNav visible={splashDone} />
+      <Topbar visible={ready} />
+      <HomeNav visible={ready} />
     </>
   )
 }
