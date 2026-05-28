@@ -36,7 +36,9 @@ export const NAV_SECTIONS: NavSection[] = [
     id: 'talent',
     label: 'For Talent',
     items: [
-      { label: 'Sports Talent',            href: '/sports-talent' },
+      // Sports Talent — temporary redirect to the existing agency site.
+      // TODO: replace with a dedicated Next.js page when we build it out.
+      { label: 'Sports Talent',            href: 'https://talent-mates-agency.com/', external: true },
       { label: 'Entertainment Talent',     href: '/entertainment-talent' },
       { label: 'Talent Mates Creators',    href: CREATORS_URL, external: true },
       { label: 'MATE — AI Football Agent', href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
