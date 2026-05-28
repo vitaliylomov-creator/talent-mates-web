@@ -15,10 +15,14 @@
   z-index: 10;
 }
 
-/* Row holds primary list + absolute panels */
+/* Row holds primary list + absolute panels.
+   align-self prevents the parent flex-column from stretching .row to full
+   viewport width — otherwise the panel positioned at left: calc(100% + 48px)
+   ends up off-screen and gets clipped by .wrap { overflow: hidden }. */
 .row {
   display: flex;
   align-items: flex-start;
+  align-self: flex-start;
   position: relative;
 }
 
