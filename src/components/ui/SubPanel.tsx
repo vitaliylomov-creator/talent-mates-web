@@ -18,13 +18,9 @@ export default function SubPanel({ section, isOpen }: Props) {
     >
       <div className={styles.label}>{section.label}</div>
       <ul className={styles.list}>
-        {section.items.map((item, i) => (
-          <li
-            key={item.href}
-            className={styles.item}
-            style={isOpen ? { animationDelay: `${0.10 + i * 0.07}s` } : undefined}
-          >
-            <Link href={item.href} className={styles.link}>
+        {section.items.map((item, i) => {
+          const content = (
+            <>
               <span className={styles.linkText}>{item.label}</span>
               {item.badge && (
                 <span className={styles.badge}>
@@ -33,9 +29,27 @@ export default function SubPanel({ section, isOpen }: Props) {
                 </span>
               )}
               <span className={styles.arrow} aria-hidden>→</span>
-            </Link>
-          </li>
-        ))}
+            </>
+          )
+
+          return (
+            <li
+              key={item.href}
+              className={styles.item}
+              style={isOpen ? { animationDelay: `${0.10 + i * 0.07}s` } : undefined}
+            >
+              {item.external ? (
+                <a href={item.href} className={styles.link} rel="noopener">
+                  {content}
+                </a>
+              ) : (
+                <Link href={item.href} className={styles.link}>
+                  {content}
+                </Link>
+              )}
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

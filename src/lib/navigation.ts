@@ -5,6 +5,8 @@ export type NavItem = {
   label: string
   href: string
   badge?: { text: string; pulse?: boolean }
+  /** Renders as <a> instead of next/link — use for cross-origin URLs. */
+  external?: boolean
 }
 
 export type NavSection = {
@@ -12,6 +14,17 @@ export type NavSection = {
   label: string
   items: NavItem[]
 }
+
+export type BottomLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+// MATE AI live app — entry from the marketing site.
+// Use mate-redirect.html instead if you want the 3-second loading screen.
+export const MATE_AI_URL =
+  'https://vitaliylomov-creator.github.io/talent-mates-pddr/mate-auth.html'
 
 export const NAV_SECTIONS: NavSection[] = [
   {
@@ -21,7 +34,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { label: 'Sports Talent',            href: '/sports-talent' },
       { label: 'Entertainment Talent',     href: '/entertainment-talent' },
       { label: 'Talent Mates Creators',    href: '/talent-mates-creators' },
-      { label: 'MATE — AI Football Agent', href: '/mate',  badge: { text: 'AI',  pulse: true } },
+      { label: 'MATE — AI Football Agent', href: MATE_AI_URL, external: true, badge: { text: 'AI', pulse: true } },
       { label: 'Player Diagnostic Report', href: '/pddr' },
     ],
   },
@@ -55,9 +68,9 @@ export const NAV_SECTIONS: NavSection[] = [
   },
 ]
 
-export const BOTTOM_LINKS = [
+export const BOTTOM_LINKS: BottomLink[] = [
   { label: 'About',      href: '/about' },
-  { label: 'MATE AI',    href: '/mate' },
+  { label: 'MATE AI',    href: MATE_AI_URL, external: true },
   { label: 'Contact us', href: 'mailto:hello@talent-mates.com' },
 ]
 

@@ -132,11 +132,17 @@ export default function HomeNav() {
         className={styles.bottomNav}
         aria-label="Site links"
       >
-        {BOTTOM_LINKS.map(link => (
-          <Link key={link.href} href={link.href} className={styles.bottomLink}>
-            {link.label}
-          </Link>
-        ))}
+        {BOTTOM_LINKS.map(link =>
+          link.external ? (
+            <a key={link.href} href={link.href} className={styles.bottomLink} rel="noopener">
+              {link.label}
+            </a>
+          ) : (
+            <Link key={link.href} href={link.href} className={styles.bottomLink}>
+              {link.label}
+            </Link>
+          )
+        )}
       </nav>
     </nav>
   )
