@@ -30,6 +30,8 @@ const APP_HOST = 'https://app.talent-mates.com'
 export const MATE_AI_URL  = `${APP_HOST}/mate-auth.html`
 export const CREATORS_URL = `${APP_HOST}/creators-auth.html`
 export const PDDR_URL     = `${APP_HOST}/player_report_sign.html`
+// MUSE AI — pre-launch presentation page (auth wires in Sprint 1).
+export const MUSE_AI_URL  = `${APP_HOST}/muse-auth.html`
 
 export const NAV_SECTIONS: NavSection[] = [
   {
@@ -38,11 +40,11 @@ export const NAV_SECTIONS: NavSection[] = [
     items: [
       // Sports Talent — temporary redirect to the existing agency site.
       // TODO: replace with a dedicated Next.js page when we build it out.
-      { label: 'Sports Talent',            href: 'https://talent-mates-agency.com/', external: true },
-      { label: 'Entertainment Talent',     href: '/entertainment-talent' },
-      { label: 'Talent Mates Creators',    href: CREATORS_URL, external: true },
-      { label: 'MATE — AI Football Agent', href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
-      { label: 'Player Diagnostic Report', href: PDDR_URL,     external: true },
+      { label: 'Sports Talent',                 href: 'https://talent-mates-agency.com/', external: true },
+      { label: 'Muse AI — Personal AI Producer', href: MUSE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
+      { label: 'Talent Mates Creators',         href: CREATORS_URL, external: true },
+      { label: 'MATE — AI Football Agent',      href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
+      { label: 'Player Diagnostic Report',      href: PDDR_URL,     external: true },
     ],
   },
   {
