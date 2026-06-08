@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
+import ConciergeWidget from '@/components/ConciergeWidget'
 import '@/styles/globals.css'
 
 const dmSans = DM_Sans({
@@ -33,7 +34,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ConciergeWidget />
+      </body>
     </html>
   )
 }
