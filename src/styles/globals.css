@@ -31,6 +31,17 @@
   --anim-fade-up-2:  fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
   --anim-fade-up-3:  fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
   --anim-pulse-dot:  pulse-dot 2s ease-in-out infinite;
+
+  /* Keyframe-name pass-through. Allows per-page module CSS to compose its
+     own animation shorthand while still referencing the global @keyframes
+     — css-loader treats the value of var(...) as opaque, so the identifier
+     inside it never gets hashed. */
+  --kf-fade-up:   fadeUp;
+  --kf-pulse-dot: pulse-dot;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import ScrollReveal from './ScrollReveal'
+import ScrollReveal from '@/components/ScrollReveal'
 import styles from './about.module.css'
 
 // ─── METADATA ───────────────────────────────────────────
