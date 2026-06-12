@@ -84,7 +84,7 @@ export const BOTTOM_LINKS: BottomLink[] = [
 ]
 
 export const SOCIAL_LINKS = [
-  { label: 'LinkedIn',  href: 'https://linkedin.com/company/talent-mates', icon: 'linkedin' },
-  { label: 'YouTube',   href: 'https://youtube.com/@talentmates',          icon: 'youtube'  },
-  { label: 'Instagram', href: 'https://instagram.com/talentmates',         icon: 'instagram' },
+  { label: 'YouTube',  href: 'https://www.youtube.com/@TalentMates-AI',         icon: 'youtube'  },
+  { label: 'X',        href: 'https://x.com/Talent_Mates',                      icon: 'x'        },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/talent-mates-limited', icon: 'linkedin' },
 ]
