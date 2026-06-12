@@ -38,12 +38,13 @@ export const NAV_SECTIONS: NavSection[] = [
     id: 'talent',
     label: 'For Talent',
     items: [
-      // Sports Talent → /representation (the Talent Mates Representation page).
-      { label: 'Sports Talent',                 href: '/representation' },
+      // Order: flagship products first (MATE, Muse, Creators), then PDDR
+      // diagnostic, then Sports Talent (→ /representation) as the last entry.
+      { label: 'MATE — AI Football Agent',       href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
       { label: 'Muse AI — Personal AI Producer', href: MUSE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
-      { label: 'Talent Mates Creators',         href: CREATORS_URL, external: true },
-      { label: 'MATE — AI Football Agent',      href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
-      { label: 'Player Diagnostic Report',      href: PDDR_URL,     external: true },
+      { label: 'Talent Mates Creators',          href: CREATORS_URL, external: true },
+      { label: 'Player Diagnostic Report',       href: PDDR_URL,     external: true },
+      { label: 'Sports Talent',                  href: '/representation' },
     ],
   },
   {
