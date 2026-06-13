@@ -105,7 +105,8 @@ const jsonLd = {
       ],
       sameAs: [
         'https://www.linkedin.com/company/talent-mates-limited',
-        'https://www.youtube.com/@talentmates',
+        'https://www.youtube.com/@TalentMates-AI',
+        'https://x.com/Talent_Mates',
         'https://find-and-update.company-information.service.gov.uk/company/17263751',
       ],
       brand: {
