@@ -11,7 +11,7 @@ import styles from './page.module.css'
 const MATE_AUTH      = 'https://app.talent-mates.com/mate-auth.html'
 const MUSE_AUTH      = 'https://app.talent-mates.com/muse-auth.html'
 const CREATORS_AUTH  = 'https://app.talent-mates.com/creators-auth.html'
-const PDDR_AUTH      = 'https://app.talent-mates.com/player_report_sign.html'
+const FIBONACCI_AUTH = 'https://app.talent-mates.com/fibonacci.html'
 
 // ─── METADATA ───────────────────────────────────────────
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ const TILES: Tile[] = [
   { name: 'NORTH',               cat: 'Brand compass',     href: '/brand-consulting',  external: false },
   { name: 'Content Engine',      cat: 'Creators',          href: CREATORS_AUTH,        external: true  },
   { name: 'Representation',      cat: 'The edge in',       href: '/representation',    external: false },
-  { name: 'Player Development',  cat: 'Diagnostic report', href: PDDR_AUTH,            external: true  },
+  { name: 'Fibonacci',           cat: 'Diagnostic by MATE', href: FIBONACCI_AUTH,       external: true  },
   { name: 'Sport Endorsements',  cat: 'Title partnerships', href: '/sports-endorsements', external: false },
 ]
 
