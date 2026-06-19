@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
+import Script from 'next/script'
 import ConciergeWidget from '@/components/ConciergeWidget'
 import '@/styles/globals.css'
 
@@ -35,6 +36,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <body>
+        {/* CookieYes — GDPR cookie banner. Must fire before any tracking
+            scripts to satisfy UK GDPR consent-before-collection. Next.js
+            hoists strategy="beforeInteractive" scripts into <head>. */}
+        <Script
+          id="cookieyes"
+          src="https://cdn-cookieyes.com/client_data/dd4227d07a88f88f518d9ff8f73285b0/script.js"
+          strategy="beforeInteractive"
+        />
         {children}
         <ConciergeWidget />
       </body>
