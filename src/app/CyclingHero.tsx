@@ -7,7 +7,7 @@ import styles from './page.module.css'
 // Click navigates to that world's destination (mix of internal Next.js routes
 // and external app subdomain pages).
 const WORDS = [
-  { text: 'football', href: 'https://app.talent-mates.com/mate-auth.html',     external: true  },
+  { text: 'football', href: 'https://app.talent-mates.com/mate-pro-auth.html?role=agent', external: true  },
   { text: 'music',    href: 'https://app.talent-mates.com/muse-auth.html',     external: true  },
   { text: 'brand',    href: '/brand-consulting',                                external: false },
   { text: 'culture',  href: 'https://app.talent-mates.com/creators-auth.html', external: true  },

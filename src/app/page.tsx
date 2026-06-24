@@ -8,7 +8,7 @@ import styles from './page.module.css'
 // All live entities — same convention as the rest of the site:
 // internal Next.js routes for pages we host on talent-mates.com,
 // external <a rel="noopener"> for apps on app.talent-mates.com.
-const MATE_AUTH      = 'https://app.talent-mates.com/mate-auth.html'
+const MATE_AUTH      = 'https://app.talent-mates.com/mate-pro-auth.html?role=agent'
 const MUSE_AUTH      = 'https://app.talent-mates.com/muse-auth.html'
 const CREATORS_AUTH  = 'https://app.talent-mates.com/creators-auth.html'
 const FIBONACCI_AUTH = 'https://app.talent-mates.com/fibonacci.html'
