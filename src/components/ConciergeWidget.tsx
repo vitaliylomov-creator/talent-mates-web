@@ -101,6 +101,7 @@ export default function ConciergeWidget() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Accept': 'text/event-stream',
             Authorization: `Bearer ${ANON_KEY}`,
             apikey: ANON_KEY,
           },
@@ -115,7 +116,7 @@ export default function ConciergeWidget() {
           }),
         })
 
-        if (!res.ok) {
+        if (!res.ok || !res.body) {
           setMessages((prev) => [
             ...prev,
             {
@@ -126,14 +127,74 @@ export default function ConciergeWidget() {
           return
         }
 
-        const data = (await res.json()) as { response?: string }
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: 'assistant',
-            text: data.response ?? "I'll get back to you on that.",
-          },
-        ])
+        // Add empty assistant bubble we'll grow as the stream arrives
+        let assistantIndex = -1
+        setMessages((prev) => {
+          assistantIndex = prev.length
+          return [...prev, { role: 'assistant', text: '' }]
+        })
+
+        const reader = res.body.getReader()
+        const decoder = new TextDecoder()
+        let buffer = ''
+        let accumulated = ''
+        let receivedAny = false
+
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+          buffer += decoder.decode(value, { stream: true })
+          const lines = buffer.split('\n')
+          buffer = lines.pop() ?? ''
+
+          for (const line of lines) {
+            if (!line.startsWith('data: ')) continue
+            const dataStr = line.slice(6).trim()
+            if (!dataStr) continue
+            let evt: { type?: string; delta?: string; response?: string }
+            try { evt = JSON.parse(dataStr) } catch { continue }
+
+            if (evt.type === 'text' && typeof evt.delta === 'string') {
+              receivedAny = true
+              accumulated += evt.delta
+              setMessages((prev) => {
+                const next = [...prev]
+                if (assistantIndex >= 0 && next[assistantIndex]) {
+                  next[assistantIndex] = { role: 'assistant', text: accumulated }
+                }
+                return next
+              })
+            } else if (evt.type === 'done') {
+              // Server gives us the canonical full text — use it if we missed anything
+              const finalText = typeof evt.response === 'string' && evt.response.length > accumulated.length
+                ? evt.response
+                : accumulated
+              setMessages((prev) => {
+                const next = [...prev]
+                if (assistantIndex >= 0 && next[assistantIndex]) {
+                  next[assistantIndex] = {
+                    role: 'assistant',
+                    text: finalText || "I'll get back to you on that.",
+                  }
+                }
+                return next
+              })
+            } else if (evt.type === 'error') {
+              if (!receivedAny) {
+                setMessages((prev) => {
+                  const next = [...prev]
+                  if (assistantIndex >= 0 && next[assistantIndex]) {
+                    next[assistantIndex] = {
+                      role: 'assistant',
+                      text: "I'm having a technical issue right now. Please try again in a moment, or email talentmates@gmail.com.",
+                    }
+                  }
+                  return next
+                })
+              }
+            }
+          }
+        }
       } catch (err) {
         console.error('Concierge fetch error:', err)
         setMessages((prev) => [
