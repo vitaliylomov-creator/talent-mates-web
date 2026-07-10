@@ -44,7 +44,7 @@ const TILES: Tile[] = [
   { name: 'MATE',                cat: 'Football',          href: MATE_AUTH,            external: true  },
   { name: 'MUSE',                cat: 'Music & artists',   href: MUSE_AUTH,            external: true  },
   { name: 'NORTH',               cat: 'Brand compass',     href: '/brand-consulting',  external: false },
-  { name: 'Content Engine',      cat: 'Creators',          href: CREATORS_AUTH,        external: true  },
+  { name: 'Magnetism',           cat: 'The diary that answers', href: CREATORS_AUTH,   external: true  },
   { name: 'Representation',      cat: 'The edge in',       href: '/representation',    external: false },
   { name: 'Fibonacci',           cat: 'Diagnostic by MATE', href: FIBONACCI_AUTH,       external: true  },
   { name: 'Sport Endorsements',  cat: 'Title partnerships', href: '/sports-endorsements', external: false },

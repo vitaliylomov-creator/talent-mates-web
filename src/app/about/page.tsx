@@ -191,11 +191,11 @@ const PRODUCTS = [
     external: true,
   },
   {
-    tag: 'For the creator',
-    name: 'Talent Mates Creators',
-    desc: 'The strategist for content creators. Competitor intelligence and content generation, quietly working in the background.',
+    tag: 'For every Talent Mate',
+    name: 'Magnetism',
+    desc: 'The private voice underneath the others. Motivation, clarity, and decisions — grounded in psychology, never a diagnosis.',
     href: 'https://app.talent-mates.com/creators-auth.html',
-    cta: 'Beta →',
+    cta: 'By invitation →',
     external: true,
   },
   {
@@ -226,7 +226,7 @@ export default function AboutPage() {
           <Link href="/about" className={styles.navLink}>About</Link>
           <a href="https://app.talent-mates.com/mate-auth.html" className={styles.navLink} rel="noopener">MATE AI</a>
           <a href="https://app.talent-mates.com/muse-auth.html" className={styles.navLink} rel="noopener">Muse AI</a>
-          <a href="https://app.talent-mates.com/creators-auth.html" className={styles.navLink} rel="noopener">Creators</a>
+          <a href="https://app.talent-mates.com/creators-auth.html" className={styles.navLink} rel="noopener">Magnetism</a>
           <a
             href="https://app.talent-mates.com/mate-auth.html"
             className={styles.navCta}

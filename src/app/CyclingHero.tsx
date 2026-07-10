@@ -10,7 +10,7 @@ const WORDS = [
   { text: 'football', href: 'https://app.talent-mates.com/mate-pro-auth.html?role=agent', external: true  },
   { text: 'music',    href: 'https://app.talent-mates.com/muse-auth.html',     external: true  },
   { text: 'brand',    href: '/brand-consulting',                                external: false },
-  { text: 'culture',  href: 'https://app.talent-mates.com/creators-auth.html', external: true  },
+  { text: 'clarity',  href: 'https://app.talent-mates.com/creators-auth.html', external: true  },
 ] as const
 
 const CYCLE_MS = 4000 // total visible time per word

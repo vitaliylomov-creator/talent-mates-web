@@ -60,7 +60,7 @@ export default function BrandConsultingPage() {
           <Link href="/about" className={styles.navLink}>About</Link>
           <a href={MATE_AUTH} className={styles.navLink} rel="noopener">MATE AI</a>
           <Link href="/brand-consulting" className={`${styles.navLink} ${styles.navLinkActive}`}>NORTH</Link>
-          <a href={CREATORS_AUTH} className={styles.navLink} rel="noopener">Creators</a>
+          <a href={CREATORS_AUTH} className={styles.navLink} rel="noopener">Magnetism</a>
           <a href="mailto:hello@talent-mates.com" className={styles.navLink}>Contact</a>
         </div>
         <a href="#cta" className={styles.navCta}>Early access</a>
@@ -149,7 +149,7 @@ export default function BrandConsultingPage() {
           <Link href="/about" className={styles.footerLink}>About</Link>
           <a href={MATE_AUTH} className={styles.footerLink} rel="noopener">MATE AI</a>
           <Link href="/brand-consulting" className={styles.footerLink}>NORTH</Link>
-          <a href={CREATORS_AUTH} className={styles.footerLink} rel="noopener">Creators</a>
+          <a href={CREATORS_AUTH} className={styles.footerLink} rel="noopener">Magnetism</a>
           <a href="mailto:hello@talent-mates.com" className={styles.footerLink}>Contact</a>
         </div>
       </footer>
