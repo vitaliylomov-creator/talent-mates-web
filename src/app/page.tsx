@@ -10,7 +10,7 @@ import styles from './page.module.css'
 // external <a rel="noopener"> for apps on app.talent-mates.com.
 const MATE_AUTH      = 'https://app.talent-mates.com/mate-pro-auth.html?role=agent'
 const MUSE_AUTH      = 'https://app.talent-mates.com/muse-auth.html'
-const CREATORS_AUTH  = 'https://app.talent-mates.com/creators-auth.html'
+const CREATORS_AUTH  = 'https://app.talent-mates.com/magnetism.html'
 const FIBONACCI_AUTH = 'https://app.talent-mates.com/fibonacci.html'
 
 // ─── METADATA ───────────────────────────────────────────

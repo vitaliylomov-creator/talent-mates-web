@@ -4,7 +4,7 @@ import HeroSlider from './HeroSlider'
 import styles from './brand-consulting.module.css'
 
 const MATE_AUTH      = 'https://app.talent-mates.com/mate-auth.html'
-const CREATORS_AUTH  = 'https://app.talent-mates.com/creators-auth.html'
+const CREATORS_AUTH  = 'https://app.talent-mates.com/magnetism.html'
 
 // ─── METADATA ───────────────────────────────────────────
 export const metadata: Metadata = {

@@ -28,7 +28,7 @@ const APP_HOST = 'https://app.talent-mates.com'
 
 // MATE AI — use mate-redirect.html instead if you want the 3-second loading screen.
 export const MATE_AI_URL  = `${APP_HOST}/mate-pro-auth.html?role=agent`
-export const CREATORS_URL = `${APP_HOST}/creators-auth.html`
+export const CREATORS_URL = `${APP_HOST}/magnetism.html`
 export const PDDR_URL     = `${APP_HOST}/player_report_sign.html`
 // MUSE AI — pre-launch presentation page (auth wires in Sprint 1).
 export const MUSE_AI_URL  = `${APP_HOST}/muse-auth.html`
