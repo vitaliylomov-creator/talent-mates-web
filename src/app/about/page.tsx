@@ -182,30 +182,6 @@ const PRODUCTS = [
     cta: 'Try MATE AI →',
     external: true,
   },
-  {
-    tag: 'For the artist',
-    name: 'Muse AI',
-    desc: 'The producer for performing artists. Career, brand, and creative direction — close enough to matter.',
-    href: 'https://app.talent-mates.com/muse-auth.html',
-    cta: 'In development →',
-    external: true,
-  },
-  {
-    tag: 'For every Talent Mate',
-    name: 'Magnetism',
-    desc: 'The private voice underneath the others. Motivation, clarity, and decisions — grounded in psychology, never a diagnosis.',
-    href: 'https://app.talent-mates.com/magnetism.html',
-    cta: 'By invitation →',
-    external: true,
-  },
-  {
-    tag: 'For the academy',
-    name: 'Player Diagnostic Report',
-    desc: 'The development map for coaches and academy directors — a structured diagnostic built on a Fibonacci progression framework.',
-    href: 'https://app.talent-mates.com/player_report_sign.html',
-    cta: 'Learn more →',
-    external: true,
-  },
 ] as const
 
 // ─── PAGE ───────────────────────────────────────────────
@@ -225,8 +201,8 @@ export default function AboutPage() {
         <div className={styles.navLinks}>
           <Link href="/about" className={styles.navLink}>About</Link>
           <a href="https://app.talent-mates.com/mate-auth.html" className={styles.navLink} rel="noopener">MATE AI</a>
-          <a href="https://app.talent-mates.com/muse-auth.html" className={styles.navLink} rel="noopener">Muse AI</a>
-          <a href="https://app.talent-mates.com/magnetism.html" className={styles.navLink} rel="noopener">Magnetism</a>
+          <Link href="/representation" className={styles.navLink}>Representation</Link>
+          <Link href="/sports-endorsements" className={styles.navLink}>Sport Endorsement</Link>
           <a
             href="https://app.talent-mates.com/mate-auth.html"
             className={styles.navCta}

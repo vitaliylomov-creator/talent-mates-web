@@ -101,10 +101,6 @@ export default function PartnerForm() {
         <select id="agent" name="Agent of Interest" defaultValue="Open — recommend">
           <option value="Open — recommend">Open — recommend</option>
           <option value="MATE — football">MATE — football</option>
-          <option value="MUSE — music & artists">MUSE — music &amp; artists</option>
-          <option value="NORTH — founders & brand">NORTH — founders &amp; brand</option>
-          <option value="Content Engain — creators">Content Engain — creators</option>
-          <option value="Cross-vertical (multiple agents)">Cross-vertical (multiple agents)</option>
         </select>
       </div>
 

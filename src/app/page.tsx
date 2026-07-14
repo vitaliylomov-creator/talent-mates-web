@@ -9,9 +9,6 @@ import styles from './page.module.css'
 // internal Next.js routes for pages we host on talent-mates.com,
 // external <a rel="noopener"> for apps on app.talent-mates.com.
 const MATE_AUTH      = 'https://app.talent-mates.com/mate-pro-auth.html?role=agent'
-const MUSE_AUTH      = 'https://app.talent-mates.com/muse-auth.html'
-const CREATORS_AUTH  = 'https://app.talent-mates.com/magnetism.html'
-const FIBONACCI_AUTH = 'https://app.talent-mates.com/fibonacci.html'
 
 // ─── METADATA ───────────────────────────────────────────
 export const metadata: Metadata = {
@@ -41,13 +38,9 @@ type Tile = {
 }
 
 const TILES: Tile[] = [
-  { name: 'MATE',                cat: 'Football',          href: MATE_AUTH,            external: true  },
-  { name: 'MUSE',                cat: 'Music & artists',   href: MUSE_AUTH,            external: true  },
-  { name: 'NORTH',               cat: 'Brand compass',     href: '/brand-consulting',  external: false },
-  { name: 'Magnetism',           cat: 'The diary that answers', href: CREATORS_AUTH,   external: true  },
-  { name: 'Representation',      cat: 'The edge in',       href: '/representation',    external: false },
-  { name: 'Fibonacci',           cat: 'Diagnostic by MATE', href: FIBONACCI_AUTH,       external: true  },
-  { name: 'Sport Endorsements',  cat: 'Title partnerships', href: '/sports-endorsements', external: false },
+  { name: 'MATE',                cat: 'Football',           href: MATE_AUTH,              external: true  },
+  { name: 'Representation',      cat: 'The edge in',        href: '/representation',      external: false },
+  { name: 'Sport Endorsement',   cat: 'Title partnerships', href: '/sports-endorsements', external: false },
 ]
 
 // ─── PAGE ───────────────────────────────────────────────
@@ -89,7 +82,7 @@ export default function HomePage() {
 
         {/* DIRECTORY — seven doors */}
         <div className={styles.directory}>
-          <div className={styles.directoryLabel}>The roster · seven doors</div>
+          <div className={styles.directoryLabel}>The roster · three doors</div>
           <div className={styles.directoryGrid}>
             {TILES.map((t) =>
               t.external ? (

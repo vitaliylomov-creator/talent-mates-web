@@ -28,51 +28,27 @@ const APP_HOST = 'https://app.talent-mates.com'
 
 // MATE AI — use mate-redirect.html instead if you want the 3-second loading screen.
 export const MATE_AI_URL  = `${APP_HOST}/mate-pro-auth.html?role=agent`
-export const CREATORS_URL = `${APP_HOST}/magnetism.html`
-export const PDDR_URL     = `${APP_HOST}/player_report_sign.html`
-// MUSE AI — pre-launch presentation page (auth wires in Sprint 1).
-export const MUSE_AI_URL  = `${APP_HOST}/muse-auth.html`
 
 export const NAV_SECTIONS: NavSection[] = [
   {
-    id: 'talent',
-    label: 'For Talent',
+    id: 'mate',
+    label: 'MATE',
     items: [
-      // Order: flagship products first (MATE, Muse, Magnetism), then PDDR
-      // diagnostic, then Sports Talent (→ /representation) as the last entry.
-      { label: 'MATE — AI Football Agent',       href: MATE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
-      { label: 'Muse AI — Personal AI Producer', href: MUSE_AI_URL,  external: true, badge: { text: 'AI', pulse: true } },
-      { label: 'Magnetism',                      href: CREATORS_URL, external: true },
-      { label: 'Player Diagnostic Report',       href: PDDR_URL,     external: true },
-      { label: 'Sports Talent',                  href: '/representation' },
+      { label: 'MATE — AI Football Agent', href: MATE_AI_URL, external: true, badge: { text: 'AI', pulse: true } },
     ],
   },
   {
-    id: 'brand',
-    label: 'For Brand',
+    id: 'representation',
+    label: 'Representation',
     items: [
-      { label: 'Brand Consulting',  href: '/brand-consulting' },
-      { label: 'Brand Management',  href: '/brand-management' },
-      { label: 'Brand Studio',      href: '/brand-studio' },
+      { label: 'Representation', href: '/representation' },
     ],
   },
   {
-    id: 'style',
-    label: 'For Style',
+    id: 'sport-endorsement',
+    label: 'Sport Endorsement',
     items: [
-      { label: 'Sports Endorsements',     href: '/sports-endorsements' },
-      { label: 'Media & Entertainment',   href: '/media-entertainment' },
-      { label: 'Life Style',              href: '/lifestyle' },
-    ],
-  },
-  {
-    id: 'enterprise',
-    label: 'For Enterprise',
-    items: [
-      { label: 'Talent Mates AI Lab',   href: '/ai-lab',        badge: { text: 'New', pulse: true } },
-      { label: 'Football Club Solutions', href: '/club-solutions' },
-      { label: 'Academy Tools',          href: '/academy-tools' },
-      { label: 'Partnerships',           href: '/partnerships' },
+      { label: 'Sport Endorsement', href: '/sports-endorsements' },
     ],
   },
 ]
