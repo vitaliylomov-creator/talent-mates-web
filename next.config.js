@@ -7,6 +7,15 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+
+  // /representation is served from a standalone static HTML in /public
+  // (rich hero slider, custom form, own CSS shell) — Next.js rewrites
+  // the clean URL to the .html file without exposing the extension.
+  async rewrites() {
+    return [
+      { source: '/representation', destination: '/representation.html' },
+    ]
+  },
 }
 
 module.exports = nextConfig
