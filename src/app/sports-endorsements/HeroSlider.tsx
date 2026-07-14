@@ -14,7 +14,7 @@ type Slide = {
 const SLIDES: Slide[] = [
   {
     num: '01 — The shift',
-    kicker: 'Sports Endorsements · by Talent Mates',
+    kicker: 'Sport Endorsement · by Talent Mates',
     title: (
       <>
         The next generation of athletes isn&rsquo;t choosing brands.
@@ -39,19 +39,19 @@ const SLIDES: Slide[] = [
     bg: 'slide2',
   },
   {
-    num: '03 — The agents',
-    kicker: 'Four teams. One roster.',
+    num: '03 — The agent',
+    kicker: 'One team. One roster.',
     title: (
       <>
-        MATE · MUSE · NORTH <em>· Content Engain.</em>
+        <em>MATE.</em>
       </>
     ),
-    sub: 'Athletes. Musicians. Founders. Creators. Four AI agents already inside the daily decisions of the people brands want to reach.',
+    sub: 'Athletes and the people brands want to reach. One AI agent, already inside the daily decisions.',
     bg: 'slide3',
   },
   {
     num: '04 — The offer',
-    kicker: 'Three tiers per agent',
+    kicker: 'Three tiers',
     title: (
       <>
         Title. Category. <em>Launch.</em>

@@ -8,14 +8,14 @@ const MATE_AUTH = 'https://app.talent-mates.com/mate-auth.html'
 
 // ─── METADATA ───────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Sports Endorsements — Title partnerships with Talent Mates agents',
+  title: 'Sport Endorsement — Title partnerships with MATE',
   description:
-    'Sports Endorsements — title partnerships with the AI agents preparing the next generation of athletes, artists, founders, and creators. By Talent Mates.',
+    'Sport Endorsement — title partnerships with the AI agent preparing the next generation of athletes. By Talent Mates.',
   alternates: { canonical: 'https://talent-mates.com/sports-endorsements' },
   openGraph: {
-    title: 'Sports Endorsements — Title partnerships with Talent Mates agents',
+    title: 'Sport Endorsement — Title partnerships with MATE',
     description:
-      "Four agents. One race engineer. Title, Category, and Launch partnerships with the AI agents inside the daily decisions of athletes, artists, founders, and creators.",
+      'The race engineer for athletes. Title, Category, and Launch partnerships with the AI agent inside the daily decisions of athletes.',
     url: 'https://talent-mates.com/sports-endorsements',
     type: 'website',
   },
@@ -31,27 +31,6 @@ const AGENTS = [
     desc: 'The race engineer for coaches, scouts, agents, and academy directors. Used inside the daily decisions that shape players and squads.',
     tag: 'Performance, kit, equipment, mobility',
   },
-  {
-    num: '02',
-    cat: 'Creative intelligence',
-    name: 'MUSE',
-    desc: 'The studio companion for artists, musicians, and producers. Present in the writing room, the release plan, the distribution call.',
-    tag: 'Audio, distribution, instruments, lifestyle',
-  },
-  {
-    num: '03',
-    cat: 'Brand compass',
-    name: 'NORTH',
-    desc: 'The brand consulting agent for founders. Synthesised from fifty years of positioning thinking. In private beta with London studios.',
-    tag: 'Productivity, infrastructure, finance, design',
-  },
-  {
-    num: '04',
-    cat: 'Creator infrastructure',
-    name: (<>Content<br />Engain</>),
-    desc: 'The operating system for creators who treat the channel as a company. Editorial, distribution, and audience compounding in one line.',
-    tag: 'Creative software, capture, hardware, platforms',
-  },
 ] as const
 
 const WHY = [
@@ -63,12 +42,12 @@ const WHY = [
   {
     n: '02',
     h: 'A decision-maker audience, not a reach audience.',
-    d: 'Each agent reaches the people who decide what their players, artists, founders, and audiences use. Not impressions — adjacency to the daily call.',
+    d: 'The agent reaches the coaches, scouts, agents, and academy directors who decide what their players use. Not impressions — adjacency to the daily call.',
   },
   {
     n: '03',
-    h: 'Cross-vertical leverage no agency can match.',
-    d: 'One conversation can move across athletes, artists, founders, and creators in a single year. A cultural moment, not a media buy.',
+    h: 'Cultural depth no agency can match.',
+    d: 'One agent, inside the daily decisions of an entire football community. A cultural moment, not a media buy.',
   },
 ] as const
 
@@ -85,7 +64,7 @@ export default function SportsEndorsementsPage() {
         <div className={styles.navLinks}>
           <Link href="/about" className={styles.navLink}>About</Link>
           <a href={MATE_AUTH} className={styles.navLink} rel="noopener">MATE AI</a>
-          <Link href="/brand-consulting" className={styles.navLink}>NORTH</Link>
+          <Link href="/representation" className={styles.navLink}>Representation</Link>
           <Link href="/sports-endorsements" className={`${styles.navLink} ${styles.navLinkActive}`}>Endorsements</Link>
           <a href="mailto:hello@talent-mates.com" className={styles.navLink}>Contact</a>
         </div>
@@ -115,7 +94,7 @@ export default function SportsEndorsementsPage() {
             <div>
               <div className={styles.sectionEyebrow}>The roster</div>
               <h2 className={styles.sectionH}>
-                Four agents.<br />Four <em>category positions.</em>
+                One agent.<br />The <em>category position.</em>
               </h2>
             </div>
             <p className={styles.sectionLead}>
@@ -243,7 +222,7 @@ export default function SportsEndorsementsPage() {
         <div className={styles.footerLinks}>
           <Link href="/about" className={styles.footerLink}>About</Link>
           <a href={MATE_AUTH} className={styles.footerLink} rel="noopener">MATE AI</a>
-          <Link href="/brand-consulting" className={styles.footerLink}>NORTH</Link>
+          <Link href="/representation" className={styles.footerLink}>Representation</Link>
           <Link href="/sports-endorsements" className={styles.footerLink}>Endorsements</Link>
           <a href="mailto:invest@talent-mates.com" className={styles.footerLink}>Partner enquiries</a>
         </div>

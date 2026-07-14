@@ -107,10 +107,11 @@ export default function RepresentationPage() {
         </Link>
         <div className={styles.navLinks}>
           <Link href="/about" className={styles.navLink}>About</Link>
+          <a href={MATE_AUTH} className={styles.navLink} rel="noopener">MATE AI</a>
           <Link href="/representation" className={`${styles.navLink} ${styles.navLinkActive}`}>
             Representation
           </Link>
-          <a href={MATE_AUTH} className={styles.navLink} rel="noopener">MATE AI</a>
+          <Link href="/sports-endorsements" className={styles.navLink}>Sport Endorsement</Link>
           <a href="mailto:hello@talent-mates.com" className={styles.navLink}>Contact</a>
           <a href={MATE_AUTH} className={styles.navCta} rel="noopener">Try MATE AI</a>
         </div>
