@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Talent Mates Representation — the edge in football representation. A small number of athletes, fully prepared for every conversation that defines a career. London." />
+  <meta property="og:title" content="Representation — Talent Mates" />
+  <meta property="og:description" content="We don't run a roster. We build careers — one athlete at a time. The race engineer model, applied to representation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://talent-mates.com/representation" />
+  <meta name="theme-color" content="#794DC6" />
+  <title>Representation — Talent Mates</title>
+
+  <!--
+  ───────────────────────────────────────────────────────────────
+  REPRESENTATION — /representation
+  ───────────────────────────────────────────────────────────────
+  Outside Shell. Matches /sports-endorsements format:
+    – NAV
+    – HERO (5-slide slider, atmospheric gradients, film grain)
+    – MANIFESTO QUOTE  (large DM Serif, deep ink surface)
+    – THE METHOD       (3-card grid: Intelligence · Lens · Product)
+    – WHO WE WORK WITH (4-card grid: the four criteria)
+    – THE 14-DAY PATH  (4-row structured timeline)
+    – FOUNDER NOTE     (personal statement from Vitalii)
+    – APPLICATION FORM (posts to hello@talent-mates.com)
+    – FOOTER
+
+  PHOTO REPLACEMENT GUIDE
+  ───────────────────────────────────────────────────────────────
+  Each hero slide currently uses a CSS atmospheric background.
+  To swap in real photography, add background-image: url('...')
+  to the .slide-{N} rule.
+
+    SLIDE 01 — the stance
+              Direction: a single athlete in profile at dusk, wide
+              empty pitch, one figure, restrained.
+
+    SLIDE 02 — the refusal
+              Direction: a closed leather folder on a wooden table,
+              side light, no ornament.
+
+    SLIDE 03 — the method
+              Direction: a match analysis screen reflected in a
+              window, city dusk beyond.
+
+    SLIDE 04 — the gate
+              Direction: four seats at an empty table, one softly
+              lit, three in shadow.
+
+    SLIDE 05 — the pathway
+              Direction: a calendar page open on a desk, one date
+              circled, London window light.
+  ───────────────────────────────────────────────────────────────
+
+  FORM SUBMISSION
+  ───────────────────────────────────────────────────────────────
+  The application form posts to FormSubmit.co — same pattern used
+  on /sports-endorsements. No backend required. Deliveries land at
+  hello@talent-mates.com (the Representation intake address).
+
+  FIRST-TIME SETUP:
+    1. Deploy this page.
+    2. Submit one test enquiry from the live URL.
+    3. FormSubmit will email hello@talent-mates.com with a
+       confirmation link — click it once.
+    4. All future submissions arrive in a clean table format.
+  ───────────────────────────────────────────────────────────────
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --purple:        #794DC6;
+      --purple-dk:     #5d3aa5;
+      --purple-lt:     #9d6ee8;
+      --ink:           #1a0f2e;
+      --ink-deep:      #0d0617;
+      --white:         #ffffff;
+      --border:        rgba(255,255,255,0.10);
+      --border-mid:    rgba(255,255,255,0.20);
+      --border-strong: rgba(255,255,255,0.35);
+      --t1: #ffffff;
+      --t2: rgba(255,255,255,0.82);
+      --t3: rgba(255,255,255,0.55);
+      --t4: rgba(255,255,255,0.35);
+      --font-d: 'DM Serif Display', Georgia, serif;
+      --font-b: 'DM Sans', system-ui, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink-deep);
+      color: var(--t1);
+      font-family: var(--font-b);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─────────────────────────────────────  NAV  */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      padding: 24px 52px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(13,6,23,0.45), transparent);
+      transition: background 0.4s var(--ease), border-color 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(13,6,23,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .nav-brand {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .nav-brand strong { color: #fff; font-weight: 500; }
+    .nav-brand span   { color: var(--t3); font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-link {
+      font-size: 13px;
+      color: var(--t2);
+      transition: color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--t1); }
+    .nav-cta {
+      background: #fff;
+      color: var(--purple);
+      border: none;
+      border-radius: 100px;
+      padding: 9px 22px;
+      font-family: var(--font-b);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { opacity: 0.88; transform: scale(1.02); }
+    .nav-cta:active { transform: scale(0.98); }
+
+    /* ─────────────────────────────────────  HERO SLIDER  */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 720px;
+      overflow: hidden;
+      background: var(--ink-deep);
+    }
+
+    .progress-bar {
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px;
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      z-index: 10;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--white);
+      width: 0%;
+    }
+
+    .slides { position: absolute; inset: 0; }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s var(--ease);
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    /* Atmospheric mesh backgrounds — replace each with real photo when ready */
+    .slide-1 {
+      background:
+        radial-gradient(ellipse 80% 60% at 30% 40%, rgba(121,77,198,0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 75% 65%, rgba(157,110,232,0.40) 0%, transparent 65%),
+        radial-gradient(ellipse 100% 70% at 50% 110%, rgba(93,58,165,0.60) 0%, transparent 60%),
+        linear-gradient(180deg, #0d0617 0%, #2a1547 100%);
+    }
+    .slide-2 {
+      background:
+        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.10) 0%, transparent 35%),
+        radial-gradient(ellipse 70% 90% at 50% 100%, rgba(121,77,198,0.70) 0%, transparent 60%),
+        radial-gradient(circle at 20% 70%, rgba(157,110,232,0.35) 0%, transparent 50%),
+        linear-gradient(135deg, #1a0f2e 0%, #5d3aa5 100%);
+    }
+    .slide-3 {
+      background:
+        radial-gradient(ellipse 50% 90% at 0% 50%, rgba(121,77,198,0.55) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 90% at 100% 50%, rgba(93,58,165,0.55) 0%, transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(157,110,232,0.25) 0%, transparent 45%),
+        linear-gradient(180deg, #0d0617 0%, #1a0f2e 50%, #0d0617 100%);
+    }
+    .slide-4 {
+      background:
+        conic-gradient(from 220deg at 50% 50%, rgba(121,77,198,0.45) 0deg, rgba(93,58,165,0.35) 90deg, rgba(13,6,23,0.95) 180deg, rgba(121,77,198,0.45) 360deg),
+        linear-gradient(180deg, #1a0f2e 0%, #0d0617 100%);
+    }
+    .slide-5 {
+      background:
+        radial-gradient(ellipse 100% 50% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 80% at 50% 100%, rgba(121,77,198,0.65) 0%, transparent 55%),
+        linear-gradient(180deg, #0d0617 0%, #2a1547 60%, #5d3aa5 100%);
+    }
+
+    /* Film grain */
+    .slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /><feColorMatrix values='0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .slide-inner {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide-num {
+      font-family: var(--font-d);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--t3);
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    .slide-kicker {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--t2);
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s var(--ease) 0.1s, transform 0.9s var(--ease) 0.1s;
+    }
+    .slide-title {
+      font-family: var(--font-d);
+      font-size: clamp(48px, 7.2vw, 108px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      max-width: 1100px;
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 1s var(--ease) 0.2s, transform 1s var(--ease) 0.2s;
+    }
+    .slide-title em {
+      font-style: italic;
+      color: rgba(255,255,255,0.45);
+    }
+    .slide-sub {
+      font-size: 18px;
+      color: var(--t2);
+      max-width: 620px;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.9s var(--ease) 0.35s, transform 0.9s var(--ease) 0.35s;
+    }
+    .slide.active .slide-num,
+    .slide.active .slide-kicker,
+    .slide.active .slide-title,
+    .slide.active .slide-sub {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slider controls */
+    .controls {
+      position: absolute;
+      bottom: 42px;
+      left: 0; right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .counter {
+      font-family: var(--font-d);
+      font-size: 14px;
+      color: var(--t2);
+      letter-spacing: 0.04em;
+    }
+    .counter .current { color: var(--t1); }
+    .counter .sep { color: var(--t4); margin: 0 8px; }
+
+    .dots { display: flex; gap: 8px; align-items: center; }
+    .dot {
+      width: 32px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .dot::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.22);
+      transition: background 0.3s;
+    }
+    .dot:hover::before { background: rgba(255,255,255,0.45); }
+    .dot.active::before { background: var(--white); }
+
+    .arrows { display: flex; gap: 10px; }
+    .arrow {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 0.5px solid var(--border-mid);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .arrow:hover  { background: rgba(255,255,255,0.15); border-color: var(--border-strong); }
+    .arrow:active { transform: scale(0.94); }
+    .arrow svg { width: 16px; height: 16px; }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 110px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--t4);
+      z-index: 5;
+      animation: bob 2.6s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%     { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─────────────────────────────────────  MANIFESTO QUOTE  */
+    .manifesto {
+      background: var(--ink-deep);
+      padding: 160px 56px 140px;
+      position: relative;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .manifesto::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 0.5px;
+      background: var(--border);
+    }
+    .manifesto-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .manifesto-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--t3);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .manifesto-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 0.5px;
+      background: var(--border-strong);
+    }
+    .manifesto-quote {
+      font-family: var(--font-d);
+      font-size: clamp(40px, 5.4vw, 80px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.022em;
+      margin-bottom: 48px;
+    }
+    .manifesto-quote em { font-style: italic; color: rgba(255,255,255,0.45); }
+    .manifesto-attr {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--t3);
+    }
+
+    /* ─────────────────────────────────────  SHARED SECTION HEAD  */
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 72px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--t3);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 0.5px;
+      background: var(--border-strong);
+    }
+    .section-h {
+      font-family: var(--font-d);
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 860px;
+    }
+    .section-h em { font-style: italic; color: rgba(255,255,255,0.40); }
+    .section-lead {
+      font-size: 16px;
+      color: var(--t2);
+      max-width: 420px;
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────  METHOD (3-card)  */
+    .method {
+      background: var(--ink-deep);
+      padding: 140px 56px 120px;
+      position: relative;
+    }
+    .method-inner { max-width: 1400px; margin: 0 auto; }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 0.5px solid var(--border);
+    }
+    .method-card {
+      padding: 44px 32px 56px;
+      border-right: 0.5px solid var(--border);
+      transition: background 0.4s var(--ease);
+      position: relative;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .method-card:last-child { border-right: none; }
+    .method-card:hover { background: rgba(255,255,255,0.03); }
+    .method-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--white);
+      transition: width 0.5s var(--ease);
+    }
+    .method-card:hover::after { width: 100%; }
+    .method-num {
+      font-family: var(--font-d);
+      font-size: 13px;
+      color: var(--t4);
+      letter-spacing: 0.06em;
+    }
+    .method-body {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .method-cat {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-lt);
+    }
+    .method-name {
+      font-family: var(--font-d);
+      font-size: clamp(28px, 2.6vw, 38px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.018em;
+    }
+    .method-d {
+      font-size: 14px;
+      color: var(--t3);
+      line-height: 1.6;
+    }
+
+    /* ─────────────────────────────────────  CRITERIA (4-card)  */
+    .criteria {
+      background: var(--ink);
+      padding: 140px 56px 120px;
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .criteria-inner { max-width: 1400px; margin: 0 auto; }
+
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 0.5px solid var(--border);
+    }
+    .criteria-card {
+      padding: 44px 24px 56px;
+      border-right: 0.5px solid var(--border);
+      transition: background 0.4s var(--ease);
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .criteria-card:last-child { border-right: none; }
+    .criteria-card:hover { background: rgba(255,255,255,0.03); }
+    .criteria-num {
+      font-family: var(--font-d);
+      font-size: 15px;
+      color: var(--t4);
+      letter-spacing: 0.04em;
+      font-style: italic;
+    }
+    .criteria-title {
+      font-family: var(--font-d);
+      font-size: clamp(22px, 1.9vw, 28px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.012em;
+      color: var(--t1);
+    }
+    .criteria-title em { font-style: italic; color: rgba(255,255,255,0.45); }
+    .criteria-d {
+      font-size: 14px;
+      color: var(--t3);
+      line-height: 1.6;
+      margin-top: auto;
+    }
+
+    /* ─────────────────────────────────────  PATHWAY (4-row timeline)  */
+    .pathway {
+      background: var(--ink-deep);
+      padding: 140px 56px 120px;
+    }
+    .pathway-inner { max-width: 1400px; margin: 0 auto; }
+
+    .pathway-list {
+      border-top: 0.5px solid var(--border);
+    }
+    .pathway-step {
+      display: grid;
+      grid-template-columns: 60px 220px 1fr;
+      align-items: start;
+      gap: 40px;
+      padding: 48px 0;
+      border-bottom: 0.5px solid var(--border);
+      transition: background 0.3s var(--ease), padding-left 0.3s var(--ease), padding-right 0.3s var(--ease);
+    }
+    .pathway-step:hover {
+      background: rgba(255,255,255,0.025);
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .step-num {
+      font-family: var(--font-d);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--t3);
+      letter-spacing: 0.02em;
+    }
+    .step-when {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-lt);
+      padding-top: 8px;
+    }
+    .step-body { display: flex; flex-direction: column; gap: 12px; }
+    .step-title {
+      font-family: var(--font-d);
+      font-size: clamp(24px, 2.2vw, 34px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.014em;
+      color: var(--t1);
+    }
+    .step-d {
+      font-size: 15px;
+      color: var(--t3);
+      line-height: 1.6;
+      max-width: 720px;
+    }
+
+    /* ─────────────────────────────────────  FOUNDER NOTE  */
+    .founder {
+      background: var(--ink);
+      padding: 160px 56px 140px;
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .founder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 25%, rgba(121,77,198,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 12% 80%, rgba(93,58,165,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .founder-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .founder-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-bottom: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .founder-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 0.5px;
+      background: var(--border-strong);
+    }
+    .founder-quote {
+      font-family: var(--font-d);
+      font-style: italic;
+      font-size: clamp(28px, 3.6vw, 48px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.012em;
+      color: var(--t1);
+      margin-bottom: 44px;
+      max-width: 980px;
+    }
+    .founder-quote .accent { color: rgba(255,255,255,0.45); font-style: italic; }
+    .founder-body {
+      font-size: 17px;
+      color: var(--t2);
+      line-height: 1.7;
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+    .founder-body + .founder-body { margin-top: -24px; }
+    .founder-sig {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--t3);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      align-items: center;
+    }
+    .founder-sig strong { color: var(--t1); font-weight: 500; }
+    .founder-sig .sep { color: var(--t4); }
+
+    /* ─────────────────────────────────────  FORM  */
+    .form-section {
+      background: linear-gradient(180deg, var(--ink-deep) 0%, var(--ink) 100%);
+      padding: 160px 56px 140px;
+      position: relative;
+      border-top: 0.5px solid var(--border);
+    }
+    .form-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(121,77,198,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(93,58,165,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .form-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .form-head { margin-bottom: 72px; max-width: 760px; }
+    .form-h {
+      font-family: var(--font-d);
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.022em;
+      margin-bottom: 28px;
+    }
+    .form-h em { font-style: italic; color: rgba(255,255,255,0.42); }
+    .form-lead {
+      font-size: 17px;
+      color: var(--t2);
+      line-height: 1.65;
+      max-width: 620px;
+    }
+
+    form.rep-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 40px;
+    }
+    .form-group-label {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--t3);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      padding-top: 24px;
+      border-top: 0.5px solid var(--border);
+    }
+    .form-group-label:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+    .form-group-label::before {
+      content: '';
+      width: 24px;
+      height: 0.5px;
+      background: var(--border-mid);
+    }
+
+    .field { display: flex; flex-direction: column; gap: 10px; position: relative; }
+    .field.full { grid-column: 1 / -1; }
+    .field label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--t3);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .field label .req { color: var(--purple-lt); }
+    .field input,
+    .field select,
+    .field textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 0.5px solid var(--border-mid);
+      color: var(--t1);
+      font-family: var(--font-b);
+      font-weight: 300;
+      font-size: 17px;
+      padding: 12px 0 14px;
+      letter-spacing: -0.005em;
+      transition: border-color 0.3s var(--ease);
+      outline: none;
+      width: 100%;
+    }
+    .field textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.55;
+    }
+    .field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-opacity='0.55' stroke-width='1.5'><path d='M6 9l6 6 6-6'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 2px center;
+      padding-right: 24px;
+      cursor: pointer;
+    }
+    .field select option { background: var(--ink-deep); color: var(--t1); }
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--t4); }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-bottom-color: var(--white); }
+
+    .form-foot {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--t4);
+      max-width: 500px;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+    }
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      color: var(--purple);
+      border: none;
+      border-radius: 100px;
+      padding: 17px 36px;
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .form-submit:hover { opacity: 0.88; transform: scale(1.02); }
+    .form-submit:active { transform: scale(0.98); }
+    .form-submit svg { width: 14px; height: 14px; }
+
+    /* Alternative contacts (WhatsApp / LinkedIn) below the form */
+    .form-alt {
+      grid-column: 1 / -1;
+      margin-top: 24px;
+      padding-top: 32px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .form-alt-label {
+      font-size: 12px;
+      color: var(--t3);
+      letter-spacing: 0.02em;
+    }
+    .form-alt-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .form-alt-link {
+      font-size: 13px;
+      color: var(--t2);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-alt-link:hover { color: var(--white); }
+    .form-alt-link svg { width: 14px; height: 14px; opacity: 0.7; }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      padding: 56px 0;
+      text-align: left;
+    }
+    .form-success.show { display: block; }
+    .form-success .ok-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--purple-lt);
+      margin-bottom: 28px;
+    }
+    .form-success .ok-h {
+      font-family: var(--font-d);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .form-success .ok-h em { font-style: italic; color: rgba(255,255,255,0.45); }
+    .form-success .ok-d {
+      font-size: 16px;
+      color: var(--t2);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ─────────────────────────────────────  FOOTER  */
+    footer {
+      background: var(--ink-deep);
+      border-top: 0.5px solid var(--border);
+      padding: 32px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      font-size: 11px;
+      color: var(--t4);
+      letter-spacing: 0.06em;
+    }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-link {
+      font-size: 11px;
+      color: var(--t4);
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--t2); }
+
+    /* ─────────────────────────────────────  MOBILE  */
+    @media (max-width: 960px) {
+      nav { padding: 18px 24px; }
+      .nav-links .nav-link { display: none; }
+      .slide-inner { padding: 0 28px; }
+      .controls { padding: 0 28px; bottom: 32px; }
+      .arrows { display: none; }
+      .scroll-hint { display: none; }
+
+      .manifesto { padding: 96px 28px; }
+      .section-head { flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 56px; }
+
+      .method { padding: 80px 28px; }
+      .method-grid { grid-template-columns: 1fr; }
+      .method-card { border-right: none; border-bottom: 0.5px solid var(--border); min-height: auto; padding: 36px 0; }
+      .method-card:last-child { border-bottom: none; }
+
+      .criteria { padding: 80px 28px; }
+      .criteria-grid { grid-template-columns: 1fr; }
+      .criteria-card { border-right: none; border-bottom: 0.5px solid var(--border); min-height: auto; padding: 32px 0; }
+      .criteria-card:last-child { border-bottom: none; }
+
+      .pathway { padding: 80px 28px; }
+      .pathway-step {
+        grid-template-columns: 40px 1fr;
+        gap: 20px;
+        padding: 36px 0;
+      }
+      .pathway-step:hover { padding-left: 0; padding-right: 0; }
+      .step-when { grid-column: 2; padding-top: 0; margin-bottom: 4px; order: -1; }
+      .step-body { grid-column: 2; }
+
+      .founder { padding: 96px 28px; }
+
+      .form-section { padding: 96px 28px; }
+      .form-head { margin-bottom: 48px; }
+      form.rep-form { grid-template-columns: 1fr; gap: 28px; }
+      .form-foot { flex-direction: column; align-items: stretch; gap: 24px; }
+      .form-submit { width: 100%; justify-content: center; }
+      .form-alt { flex-direction: column; align-items: flex-start; }
+
+      footer { padding: 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ──────────────  NAV  ────────────── -->
+  <nav id="nav">
+    <a href="/" class="nav-brand">
+      <strong>Talent</strong> <span>Mates</span>
+    </a>
+    <div class="nav-links">
+      <a href="/about" class="nav-link">About</a>
+      <a href="https://app.talent-mates.com/mate-auth.html" class="nav-link">MATE AI</a>
+      <a href="/representation" class="nav-link active">Representation</a>
+      <a href="/sports-endorsements" class="nav-link">Sport Endorsement</a>
+      <a href="mailto:hello@talent-mates.com" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('rep-form').scrollIntoView({behavior:'smooth'})">Begin the conversation</button>
+  </nav>
+
+  <!-- ──────────────  HERO SLIDER  ────────────── -->
+  <section class="hero" id="hero">
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="slides">
+
+      <!-- SLIDE 01 -->
+      <article class="slide slide-1 active">
+        <div class="slide-inner">
+          <div class="slide-num">01 — The stance</div>
+          <div class="slide-kicker">Representation · London</div>
+          <h1 class="slide-title">The edge <em>in representation.</em></h1>
+          <p class="slide-sub">We don't run a roster. We build careers — one athlete at a time, quietly prepared for every conversation that defines them.</p>
+        </div>
+      </article>
+
+      <!-- SLIDE 02 -->
+      <article class="slide slide-2">
+        <div class="slide-inner">
+          <div class="slide-num">02 — The refusal</div>
+          <div class="slide-kicker">What we will not be</div>
+          <h1 class="slide-title">Representation is not a service.<br/><em>It is an outcome.</em></h1>
+          <p class="slide-sub">Most agencies are measured by roster size. We measure differently — one life, one window, one chain of decisions where the agent is in the room.</p>
+        </div>
+      </article>
+
+      <!-- SLIDE 03 -->
+      <article class="slide slide-3">
+        <div class="slide-inner">
+          <div class="slide-num">03 — The method</div>
+          <div class="slide-kicker">Three anchors · non-negotiable</div>
+          <h1 class="slide-title">The race engineer <em>in every room.</em></h1>
+          <p class="slide-sub">Intelligence from MATE. The football read from Vitalii. The five-year pathway priced as the product. Three anchors behind every decision we make for the athletes we represent.</p>
+        </div>
+      </article>
+
+      <!-- SLIDE 04 -->
+      <article class="slide slide-4">
+        <div class="slide-inner">
+          <div class="slide-num">04 — The gate</div>
+          <div class="slide-kicker">Fewer athletes. Fully chosen.</div>
+          <h1 class="slide-title">We are not the right agency <em>for every player.</em></h1>
+          <p class="slide-sub">Four criteria decide it. All four, or the player is better served elsewhere — and we say so, plainly and early.</p>
+        </div>
+      </article>
+
+      <!-- SLIDE 05 -->
+      <article class="slide slide-5">
+        <div class="slide-inner">
+          <div class="slide-num">05 — The pathway</div>
+          <div class="slide-kicker">Fourteen days · one answer</div>
+          <h1 class="slide-title">Four conversations. <em>One clear decision.</em></h1>
+          <p class="slide-sub">Yes or no, every enquiry receives a decision within 14 days. Families don't wait. The reasoning is honest either way.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="scroll-hint">Scroll</div>
+
+    <div class="controls">
+      <div class="counter">
+        <span class="current" id="curNum">01</span>
+        <span class="sep">/</span>
+        <span>05</span>
+      </div>
+      <div class="dots" id="dots">
+        <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+        <button class="dot" data-i="1" aria-label="Slide 2"></button>
+        <button class="dot" data-i="2" aria-label="Slide 3"></button>
+        <button class="dot" data-i="3" aria-label="Slide 4"></button>
+        <button class="dot" data-i="4" aria-label="Slide 5"></button>
+      </div>
+      <div class="arrows">
+        <button class="arrow" id="prevBtn" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="arrow" id="nextBtn" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────  MANIFESTO QUOTE  ────────────── -->
+  <section class="manifesto">
+    <div class="manifesto-inner">
+      <div class="manifesto-eyebrow">The line</div>
+      <p class="manifesto-quote">We don't run a roster.<br/><em>We build careers — one athlete at a time.</em></p>
+      <div class="manifesto-attr">The thing we refuse to be is a broker</div>
+    </div>
+  </section>
+
+  <!-- ──────────────  METHOD (3-card)  ────────────── -->
+  <section class="method" id="method">
+    <div class="method-inner">
+
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">The method</div>
+          <h2 class="section-h">Three anchors.<br/>None are <em>negotiable.</em></h2>
+        </div>
+        <p class="section-lead">Behind every decision we make for an athlete we represent sit three fixed anchors. Together they are the reason a Talent Mates athlete walks into a room already prepared.</p>
+      </div>
+
+      <div class="method-grid">
+
+        <div class="method-card">
+          <div class="method-num">01</div>
+          <div class="method-body">
+            <div class="method-cat">Intelligence</div>
+            <div class="method-name">MATE in every decision.</div>
+            <div class="method-d">The intelligence layer runs underneath every contract review, every trial offer, every transfer conversation. MATE doesn't play. MATE prepares the ones who do.</div>
+          </div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-num">02</div>
+          <div class="method-body">
+            <div class="method-cat">Lens</div>
+            <div class="method-name">The football reading is real.</div>
+            <div class="method-d">Vitalii Lomov, founder and UEFA-licensed coach, sits inside every athlete file. The technical read of the player and the operational read of the deal are the same read.</div>
+          </div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-num">03</div>
+          <div class="method-body">
+            <div class="method-cat">Product</div>
+            <div class="method-name">The pathway is the product.</div>
+            <div class="method-d">We do not sell access. We do not sell signatures. We work on the five-year shape of a career — and price representation around the shape, not the transaction.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────  CRITERIA (4-card)  ────────────── -->
+  <section class="criteria" id="criteria">
+    <div class="criteria-inner">
+
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">Who we work with</div>
+          <h2 class="section-h">Few athletes. <em>Fully chosen.</em></h2>
+        </div>
+        <p class="section-lead">We are not the right agency for every player, and we are honest about it. Four things sit at the gate — the absence of any one is a signal we will not represent the player well.</p>
+      </div>
+
+      <div class="criteria-grid">
+
+        <div class="criteria-card">
+          <div class="criteria-num">i.</div>
+          <div class="criteria-title">A real, verifiable <em>level.</em></div>
+          <div class="criteria-d">The technical foundation is there on tape, in matches, in training. We don't represent potential we cannot see. The work begins with the football, not with the narrative around it.</div>
+        </div>
+
+        <div class="criteria-card">
+          <div class="criteria-num">ii.</div>
+          <div class="criteria-title">Ambition that matches <em>reality.</em></div>
+          <div class="criteria-d">The athlete knows where they are, knows where they want to be, and is honest about the distance between the two. Coachability — for the player, the family, and the agent — is the precondition for everything.</div>
+        </div>
+
+        <div class="criteria-card">
+          <div class="criteria-num">iii.</div>
+          <div class="criteria-title">A family that thinks <em>in years.</em></div>
+          <div class="criteria-d">The decisions that matter most rarely feel urgent. Families who value the five-year shape over the quick deal find the right partner here. Families who don't, won't.</div>
+        </div>
+
+        <div class="criteria-card">
+          <div class="criteria-num">iv.</div>
+          <div class="criteria-title">A pathway that requires <em>preparation.</em></div>
+          <div class="criteria-d">Contracts in front of the player. Trials being discussed. A move between countries or leagues. The harder the decision in the next 12 months, the more we add. The easier it is, the better the player is served elsewhere.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────  14-DAY PATHWAY  ────────────── -->
+  <section class="pathway" id="pathway">
+    <div class="pathway-inner">
+
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">The pathway</div>
+          <h2 class="section-h">Four conversations.<br/>One <em>decision.</em></h2>
+        </div>
+        <p class="section-lead">Whether the answer is yes or no, every enquiry receives a clear decision within 14 days. We do not keep families waiting. The reasoning is written, and it is honest.</p>
+      </div>
+
+      <div class="pathway-list">
+
+        <div class="pathway-step">
+          <div class="step-num">i.</div>
+          <div class="step-when">Day 0</div>
+          <div class="step-body">
+            <div class="step-title">Initial enquiry</div>
+            <div class="step-d">A short message from the athlete, family, or current coach. Who the player is, where they are now, and the decision they are walking toward.</div>
+          </div>
+        </div>
+
+        <div class="pathway-step">
+          <div class="step-num">ii.</div>
+          <div class="step-when">Day 1 — 3</div>
+          <div class="step-body">
+            <div class="step-title">Football conversation</div>
+            <div class="step-d">A video call with Vitalii. Forty minutes. Football first, paperwork never. The aim is to understand the player as a player.</div>
+          </div>
+        </div>
+
+        <div class="pathway-step">
+          <div class="step-num">iii.</div>
+          <div class="step-when">Day 3 — 10</div>
+          <div class="step-body">
+            <div class="step-title">Technical review</div>
+            <div class="step-d">Footage, situation, current paperwork, current pathway. Reviewed against the four criteria. MATE supports the read. The human makes the call.</div>
+          </div>
+        </div>
+
+        <div class="pathway-step">
+          <div class="step-num">iv.</div>
+          <div class="step-when">By Day 14</div>
+          <div class="step-body">
+            <div class="step-title">The decision</div>
+            <div class="step-d">A clear answer, explained in writing. If yes, the next conversation is about the work. If no, the reasoning is honest — and where we can, we point to a better fit.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────  FOUNDER NOTE  ────────────── -->
+  <section class="founder">
+    <div class="founder-inner">
+      <div class="founder-eyebrow">A note from the founder</div>
+
+      <p class="founder-quote">
+        When a family puts a son's or daughter's career in your hands, the room becomes very quiet. <span class="accent">Everything I have built — the coaching, the football work, the AI — exists to deserve that quiet.</span>
+      </p>
+
+      <p class="founder-body">
+        I started Talent Mates because the football industry talks too much about access and too little about preparation. A player doesn't need an agent who knows everybody. A player needs an agent who has read every clause, watched every minute of tape, and is in the room when the decision lands.
+      </p>
+
+      <p class="founder-body">
+        That is what we are building here, one athlete at a time, and that is why the roster is small. If your son or daughter is approaching a moment that will shape the next five years of their career, you are welcome to be in touch — directly, plainly, and without obligation.
+      </p>
+
+      <div class="founder-sig">
+        <strong>Vitalii Lomov</strong>
+        <span class="sep">·</span>
+        <span>Founder, Talent Mates</span>
+        <span class="sep">·</span>
+        <span>UEFA-licensed coach</span>
+        <span class="sep">·</span>
+        <span>London</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────  APPLICATION FORM  ────────────── -->
+  <section class="form-section" id="rep-form">
+    <div class="form-inner">
+
+      <div class="form-head">
+        <div class="section-eyebrow">Begin the conversation</div>
+        <h2 class="form-h">If a real decision is <em>ahead of you — tell us where.</em></h2>
+        <p class="form-lead">Write a short note about the athlete and the moment. The founder reads every enquiry personally. A clear answer arrives within fourteen days.</p>
+      </div>
+
+      <form
+        class="rep-form"
+        id="repForm"
+        action="https://formsubmit.co/hello@talent-mates.com"
+        method="POST"
+      >
+        <!-- FormSubmit configuration (hidden) -->
+        <input type="hidden" name="_subject" value="New Representation enquiry — Talent Mates" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_autoresponse" value="Thank you. Your Representation enquiry has been received in London. Vitalii reads every enquiry personally. A clear answer, either way, arrives within fourteen days. — Talent Mates Limited" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <!-- ─── Who is writing ─── -->
+        <div class="form-group-label">Who is writing</div>
+
+        <div class="field">
+          <label for="firstName">First name <span class="req">*</span></label>
+          <input type="text" id="firstName" name="First Name" required autocomplete="given-name" />
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last name <span class="req">*</span></label>
+          <input type="text" id="lastName" name="Last Name" required autocomplete="family-name" />
+        </div>
+
+        <div class="field">
+          <label for="relationship">You are the <span class="req">*</span></label>
+          <select id="relationship" name="Relationship to Athlete" required>
+            <option value="">Select…</option>
+            <option value="Parent or guardian">Parent or guardian</option>
+            <option value="The athlete">The athlete</option>
+            <option value="Current coach">Current coach</option>
+            <option value="Family friend or advisor">Family friend or advisor</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="Email" required autocomplete="email" />
+        </div>
+
+        <div class="field full">
+          <label for="whatsapp">WhatsApp (optional)</label>
+          <input type="tel" id="whatsapp" name="WhatsApp" placeholder="e.g. +44 7756 906679" autocomplete="tel" />
+        </div>
+
+        <!-- ─── About the athlete ─── -->
+        <div class="form-group-label">About the athlete</div>
+
+        <div class="field">
+          <label for="athleteName">Athlete's full name <span class="req">*</span></label>
+          <input type="text" id="athleteName" name="Athlete Name" required />
+        </div>
+
+        <div class="field">
+          <label for="athleteAge">Age or date of birth <span class="req">*</span></label>
+          <input type="text" id="athleteAge" name="Athlete Age or DOB" required placeholder="e.g. 16 or DD/MM/YYYY" />
+        </div>
+
+        <div class="field">
+          <label for="position">Position</label>
+          <input type="text" id="position" name="Position" placeholder="e.g. CB, LW, CM" />
+        </div>
+
+        <div class="field">
+          <label for="club">Current club or academy</label>
+          <input type="text" id="club" name="Current Club" />
+        </div>
+
+        <div class="field">
+          <label for="country">Country <span class="req">*</span></label>
+          <input type="text" id="country" name="Country" required autocomplete="country-name" placeholder="e.g. United Kingdom" />
+        </div>
+
+        <div class="field">
+          <label for="window">Decision ahead</label>
+          <select id="window" name="Decision Ahead">
+            <option value="">Select the closest match…</option>
+            <option value="Contract discussion pending">Contract discussion pending</option>
+            <option value="Trial being discussed">Trial being discussed</option>
+            <option value="International transfer">International transfer</option>
+            <option value="Long-term pathway planning">Long-term pathway planning</option>
+            <option value="Exploring representation">Exploring representation</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- ─── The moment ─── -->
+        <div class="form-group-label">The moment, in your words</div>
+
+        <div class="field full">
+          <label for="context">Tell us about the athlete and what is ahead</label>
+          <textarea id="context" name="Context" placeholder="Where the player is now, where they want to be, and the decision they are walking toward. A paragraph is enough."></textarea>
+        </div>
+
+        <div class="form-foot">
+          <p class="form-note">By submitting, you agree to be contacted by Talent Mates Limited regarding this enquiry. We do not share enquiries with third parties. Every enquiry is read personally by the founder.</p>
+          <button type="submit" class="form-submit">
+            Send to Vitalii
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <div class="form-alt">
+          <span class="form-alt-label">Or reach the founder directly —</span>
+          <div class="form-alt-links">
+            <a href="mailto:hello@talent-mates.com?subject=Representation%20enquiry" class="form-alt-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              hello@talent-mates.com
+            </a>
+            <a href="https://wa.me/447756906679" class="form-alt-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/company/talent-mates-limited" class="form-alt-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Success state (revealed after AJAX success) -->
+      <div class="form-success" id="formSuccess">
+        <div class="ok-eyebrow">Received in London</div>
+        <h3 class="ok-h">Your enquiry is <em>in Vitalii's inbox.</em></h3>
+        <p class="ok-d">Every enquiry is read personally. A clear answer, either way, arrives within fourteen days. If the moment ahead of you is urgent, WhatsApp reaches him fastest.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────  FOOTER  ────────────── -->
+  <footer>
+    <div class="footer-brand">© 2026 Talent Mates Limited · London · Companies House 17263751</div>
+    <div class="footer-links">
+      <a href="/about" class="footer-link">About</a>
+      <a href="https://app.talent-mates.com/mate-auth.html" class="footer-link">MATE AI</a>
+      <a href="/representation" class="footer-link">Representation</a>
+      <a href="/sports-endorsements" class="footer-link">Sport Endorsement</a>
+      <a href="/privacy" class="footer-link">Privacy</a>
+      <a href="mailto:hello@talent-mates.com" class="footer-link">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    /* ─────────── SLIDER ─────────── */
+    const slides   = document.querySelectorAll('.slide');
+    const dots     = document.querySelectorAll('.dot');
+    const curNum   = document.getElementById('curNum');
+    const progress = document.getElementById('progressFill');
+    const prevBtn  = document.getElementById('prevBtn');
+    const nextBtn  = document.getElementById('nextBtn');
+
+    let idx       = 0;
+    let startTime = 0;
+    let raf       = null;
+    let paused    = false;
+    const DURATION = 6500;
+
+    function go(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+      dots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+      curNum.textContent = String(idx + 1).padStart(2, '0');
+      restartProgress();
+    }
+    const next = () => go(idx + 1);
+    const prev = () => go(idx - 1);
+
+    function tickProgress(ts) {
+      if (paused) { raf = requestAnimationFrame(tickProgress); return; }
+      if (!startTime) startTime = ts;
+      const elapsed = ts - startTime;
+      const pct = Math.min(100, (elapsed / DURATION) * 100);
+      progress.style.width = pct + '%';
+      if (elapsed >= DURATION) {
+        next();
+      } else {
+        raf = requestAnimationFrame(tickProgress);
+      }
+    }
+    function restartProgress() {
+      cancelAnimationFrame(raf);
+      startTime = 0;
+      progress.style.width = '0%';
+      raf = requestAnimationFrame(tickProgress);
+    }
+
+    dots.forEach(d => d.addEventListener('click', () => go(parseInt(d.dataset.i))));
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+
+    const hero = document.getElementById('hero');
+    hero.addEventListener('mouseenter', () => { paused = true; });
+    hero.addEventListener('mouseleave', () => { paused = false; startTime = 0; });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft')  prev();
+    });
+
+    let touchStartX = 0;
+    hero.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    hero.addEventListener('touchend',   (e) => {
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(dx) > 50) (dx < 0 ? next : prev)();
+    }, { passive: true });
+
+    restartProgress();
+
+    /* ─────────── NAV SCROLL ─────────── */
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 80);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ─────────── FORM — graceful success ───────────
+       FormSubmit redirects to its own thank-you page by default.
+       We submit via fetch and reveal #formSuccess on 200 so the
+       user stays on this page. Falls back to native submit on
+       fetch failure.
+    */
+    const form    = document.getElementById('repForm');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      const originalLabel = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.classList.add('show');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          form.submit();
+        }
+      } catch (err) {
+        form.submit();
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalLabel;
+      }
+    });
+  </script>
+
+</body>
+</html>
