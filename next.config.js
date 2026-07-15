@@ -14,8 +14,9 @@ const nextConfig = {
   // so styles stay fully scoped and behaviour matches the source file 1:1.
   async rewrites() {
     return [
-      { source: '/about',          destination: '/about.html' },
-      { source: '/representation', destination: '/representation.html' },
+      { source: '/about',               destination: '/about.html' },
+      { source: '/representation',      destination: '/representation.html' },
+      { source: '/sports-endorsements', destination: '/sports-endorsements.html' },
     ]
   },
 }
