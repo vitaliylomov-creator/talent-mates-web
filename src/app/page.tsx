@@ -41,6 +41,7 @@ const TILES: Tile[] = [
   { name: 'MATE',                cat: 'Football',           href: MATE_AUTH,              external: true  },
   { name: 'Representation',      cat: 'The edge in',        href: '/representation',      external: false },
   { name: 'Sport Endorsement',   cat: 'Title partnerships', href: '/sports-endorsements', external: false },
+  { name: 'Pathway Session',     cat: 'Founder-led · €100', href: '/session',             external: false },
 ]
 
 // ─── PAGE ───────────────────────────────────────────────
@@ -83,7 +84,7 @@ export default function HomePage() {
 
         {/* DIRECTORY — seven doors */}
         <div className={styles.directory}>
-          <div className={styles.directoryLabel}>The roster · three doors</div>
+          <div className={styles.directoryLabel}>The roster · four doors</div>
           <div className={styles.directoryGrid}>
             {TILES.map((t) =>
               t.external ? (

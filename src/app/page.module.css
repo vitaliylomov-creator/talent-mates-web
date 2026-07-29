@@ -238,7 +238,7 @@
 }
 .directoryGrid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-top: 0.5px solid var(--border);
 }
 .tile {
@@ -376,7 +376,7 @@
     min-height: 96px;
   }
   .tile:nth-child(odd) { border-right: 0.5px solid var(--border); }
-  .tile:nth-last-child(-n+2):not(:nth-child(odd)) { border-bottom: none; }
+  .tile:nth-last-child(-n+2) { border-bottom: none; }
   .tileArrow { opacity: 0.6; transform: translateX(0); }
 
   .footer { padding: 32px 24px 24px; }
