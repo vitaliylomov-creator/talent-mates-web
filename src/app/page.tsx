@@ -41,6 +41,7 @@ const TILES: Tile[] = [
   { name: 'MATE',                cat: 'Football',           href: MATE_AUTH,              external: true  },
   { name: 'Representation',      cat: 'The edge in',        href: '/representation',      external: false },
   { name: 'Sport Endorsement',   cat: 'Title partnerships', href: '/sports-endorsements', external: false },
+  { name: 'Pathway Session',     cat: 'Founder-led · €100', href: '/session',             external: false },
 ]
 
 // ─── PAGE ───────────────────────────────────────────────
@@ -55,6 +56,7 @@ export default function HomePage() {
         </Link>
         <div className={styles.navRight}>
           <Link href="/about" className={styles.navLink}>About</Link>
+          <Link href="/session" className={styles.navLink}>Pathway Session</Link>
           <a href="mailto:hello@talent-mates.com" className={styles.navLink}>Contact</a>
           <div className={styles.navMeta}>
             <span className={styles.navDot} aria-hidden />
@@ -82,7 +84,7 @@ export default function HomePage() {
 
         {/* DIRECTORY — seven doors */}
         <div className={styles.directory}>
-          <div className={styles.directoryLabel}>The roster · three doors</div>
+          <div className={styles.directoryLabel}>The roster · four doors</div>
           <div className={styles.directoryGrid}>
             {TILES.map((t) =>
               t.external ? (
@@ -119,6 +121,7 @@ export default function HomePage() {
             <a href={MATE_AUTH} className={styles.footerLink} rel="noopener">MATE AI</a>
             <Link href="/representation" className={styles.footerLink}>Representation</Link>
             <Link href="/sports-endorsements" className={styles.footerLink}>Endorsements</Link>
+            <Link href="/session" className={styles.footerLink}>Pathway Session</Link>
             <a href="mailto:hello@talent-mates.com" className={styles.footerLink}>Contact</a>
           </div>
           <div className={styles.footerSocials}>
