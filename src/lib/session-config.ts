@@ -6,9 +6,9 @@
 // on invented scarcity.
 
 export const SESSION_CONFIG = {
-  // Cal.com event slug. Vitalii replaces this after Cal.com + Stripe app setup.
-  calLink: 'vitalii/pathway-session',
-  calDirectUrl: 'https://cal.com/vitalii/pathway-session',
+  // Cal.com event slug — live event with Stripe app connected, €100, Google Meet.
+  calLink: 'vitalii-lomov/pathway-session',
+  calDirectUrl: 'https://cal.com/vitalii-lomov/pathway-session',
 
   // Pathway Session pricing (in EUR).
   foundingPrice: 100,
