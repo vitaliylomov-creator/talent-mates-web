@@ -55,6 +55,7 @@ export default function HomePage() {
         </Link>
         <div className={styles.navRight}>
           <Link href="/about" className={styles.navLink}>About</Link>
+          <Link href="/session" className={styles.navLink}>Pathway Session</Link>
           <a href="mailto:hello@talent-mates.com" className={styles.navLink}>Contact</a>
           <div className={styles.navMeta}>
             <span className={styles.navDot} aria-hidden />
@@ -119,6 +120,7 @@ export default function HomePage() {
             <a href={MATE_AUTH} className={styles.footerLink} rel="noopener">MATE AI</a>
             <Link href="/representation" className={styles.footerLink}>Representation</Link>
             <Link href="/sports-endorsements" className={styles.footerLink}>Endorsements</Link>
+            <Link href="/session" className={styles.footerLink}>Pathway Session</Link>
             <a href="mailto:hello@talent-mates.com" className={styles.footerLink}>Contact</a>
           </div>
           <div className={styles.footerSocials}>

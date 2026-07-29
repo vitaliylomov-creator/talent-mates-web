@@ -196,7 +196,7 @@ export default function SessionPage() {
           <a href={MATE_AUTH} className={styles.navLink} rel="noopener">MATE AI</a>
           <Link href="/representation" className={styles.navLink}>Representation</Link>
           <Link href="/sports-endorsements" className={styles.navLink}>Sport Endorsement</Link>
-          <Link href="/session" className={`${styles.navLink} ${styles.navLinkActive}`}>Book</Link>
+          <Link href="/session" className={`${styles.navLink} ${styles.navLinkActive}`}>Pathway Session</Link>
           <a href="mailto:hello@talent-mates.com" className={styles.navLink}>Contact</a>
         </div>
         <a href="#book" className={styles.navCta}>Book the session</a>
