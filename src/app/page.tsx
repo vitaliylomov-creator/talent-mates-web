@@ -126,7 +126,7 @@ export default function HomePage() {
           </div>
           <div className={styles.footerSocials}>
             <a
-              href="https://www.youtube.com/@TalentMates-AI"
+              href="https://youtube.com/@talent-mates?si=jMiaSJHoqio9oFT-"
               className={styles.footerSocial}
               aria-label="YouTube"
               target="_blank"
